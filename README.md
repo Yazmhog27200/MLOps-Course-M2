@@ -1,31 +1,27 @@
-# MLOps – Course
+# Churn Classifier with Pipelines + MLflow
 
-This repository contains the slides, labs, and project scaffold for a  MLOps training:
+This project builds a **tabular classification pipeline** (scikit-learn `Pipeline` + `ColumnTransformer`)
+and tracks everything with **MLflow**.
 
-## Structure
-```
-mlops_2day_course/
-├── slides/
-│   └── MLOps_SupdeVinci.pptx
-├── labs/
-│   ├── Lab1/
-│   └── Lab2_SA_HuggingFace/
-├── project/
-│   └── ml_microservice/
-├── docs/
-│   └── syllabus.md
-
-```
+## Features
+- Reproducible pipelines with preprocessing
+- Cross-validation & tuning
+- MLflow tracking & registry
+- CLI + config-driven workflow
+- Unit tests
+- Makefile for automation
 
 ## Quickstart
 ```bash
-# create & activate env
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r project/ml_microservice/requirements.txt
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 
-# run microservice locally
-make -C project/ml_microservice run
+# train
+make train
+
+# evaluate
+make evaluate
 
 # run tests
-make -C project/ml_microservice test
+make test
 ```
